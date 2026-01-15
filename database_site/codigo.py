@@ -84,7 +84,6 @@ def cliente(id):
     """, (id,))
 
     cliente = cursor.fetchone()
-
     conn.close()
 
     return render_template("cliente.html", cliente=cliente)
@@ -106,6 +105,18 @@ def buscar():
     conn.close()
 
     return render_template("resultado.html", clientes=clientes)
+
+
+@app.route("/deletar/<id>")
+def deletar(id):
+    conn = conectar()
+    cursor = conn.cursor()
+
+    cursor.execute("DELETE FROM clientes WHERE id = ?", (id,))
+    conn.commit()
+    conn.close()
+
+    return redirect("/")
 
 
 if __name__ == "__main__":

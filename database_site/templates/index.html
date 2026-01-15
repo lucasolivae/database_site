@@ -33,6 +33,11 @@
         <a href="/cliente/{{c[0]}}">
             {{c[1]}} - {{c[0]}}
         </a>
+        |
+        <a href="/deletar/{{c[0]}}"
+           onclick="return confirm('Tem certeza que deseja deletar?')">
+           Deletar
+        </a>
     </li>
 {% endfor %}
 </ul>

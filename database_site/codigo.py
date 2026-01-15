@@ -90,5 +90,23 @@ def cliente(id):
     return render_template("cliente.html", cliente=cliente)
 
 
+@app.route("/buscar", methods=["POST"])
+def buscar():
+    termo = request.form["termo"]
+
+    conn = conectar()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT * FROM clientes
+        WHERE id = ? OR nome LIKE ?
+    """, (termo, f"%{termo}%"))
+
+    clientes = cursor.fetchall()
+    conn.close()
+
+    return render_template("resultado.html", clientes=clientes)
+
+
 if __name__ == "__main__":
     app.run(debug=True)

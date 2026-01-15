@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clientes</title>
+</head>
+<body>
+
+<h2>Cadastrar Cliente</h2>
+
+<form method="POST">
+    <input name="nome" placeholder="Nome" required><br>
+    <input name="nascimento" type="date" required><br>
+    <input name="telefone" placeholder="Telefone" required><br>
+    <button>Cadastrar</button>
+</form>
+
+<hr>
+
+<h2>Lista</h2>
+
+<ul>
+{% for c in clientes %}
+    <li>
+        <a href="/cliente/{{c[0]}}">
+            {{c[1]}} - {{c[0]}}
+        </a>
+    </li>
+{% endfor %}
+</ul>
+
+</body>
+</html>

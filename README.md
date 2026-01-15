@@ -10,16 +10,20 @@ Allows registering clients in a SQLite database and viewing their information.
 
 🇧🇷
 - Cadastro de clientes (nome, data de nascimento e telefone)
-- Geração automática de ID alfanumérico
+- Geração automática de ID alfanumérico (nunca se repete)
 - Listagem de todos os clientes
 - Página individual para cada cliente
+- Busca por nome ou ID
+- Retorna múltiplos resultados para nomes iguais
 - Armazenamento em banco SQLite
 
 🇺🇸
 - Client registration (name, birth date and phone)
-- Automatic alphanumeric ID generation
+- Automatic alphanumeric ID generation (never repeats)
 - List all registered clients
 - Individual client page
+- Search by name or ID
+- Returns multiple results for duplicate names
 - Data stored in SQLite database
 
 ## Como usar | How to use
@@ -45,12 +49,16 @@ database_site/
 ├─ database.db  
 └─ templates/  
    ├─ index.html  
-   └─ cliente.html  
+   ├─ cliente.html  
+   └─ resultado.html  
 
 ## Objetivo | Purpose
 
 🇧🇷 Projeto de estudo em backend para portfólio.  
-🇺🇸 Backend study project for portfolio.
+Inclui operações reais com banco de dados e sistema de busca.
+
+🇺🇸 Backend study project for portfolio.  
+Includes real database operations and search system.
 
 ## Autor | Author
 

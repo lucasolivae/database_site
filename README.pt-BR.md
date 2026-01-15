@@ -22,20 +22,10 @@ pip install flask
 ### Running the project
 1. Open a terminal inside the project folder  
 2. Run:
-
 python codigo.py
 
 3. Open in your browser:
 http://127.0.0.1:5000
-
-## Project structure
-database_site/
-│
-├─ codigo.py
-├─ database.db
-└─ templates/
-   ├─ index.html
-   └─ cliente.html
 
 ## Author
 Lee  
